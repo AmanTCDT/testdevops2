@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save Time Input</title>
+</head>
+<body>
+  <h2>Enter Time</h2>
+  <form id="timeForm">
+    <label for="timeInput">Select Time:</label>
+    <input type="time" id="timeInput" name="timeInput" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="savedTimeDisplay"></p>
+
+  <script>
+    document.getElementById("timeForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+
+      const timeValue = document.getElementById("timeInput").value;
+      
+      // Save the time (you can store it in localStorage or send it to a server)
+      localStorage.setItem("savedTime", timeValue);
+
+      // Display the saved time
+      document.getElementById("savedTimeDisplay").textContent = `Saved Time: ${timeValue}`;
+    });
+  </script>
+</body>
+</html>
