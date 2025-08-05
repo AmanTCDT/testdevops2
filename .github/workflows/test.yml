@@ -1,25 +1,3 @@
-            - name: ServiceNow DevOps Update Change
-  # You may pin to the exact commit or the version.
-  # uses: ServiceNow/servicenow-devops-update-change@589b0f32061eca8b11072ccf4cbb3d2eba767e43
-  uses: ServiceNow/servicenow-devops-update-change@v5.1.0
-  with:
-    # ServiceNow Instance URL
-    instance-url: 
-    # ServiceNow Devops security token
-    devops-integration-token: # optional
-    # Orchestration Tool Id of the tool created in ServiceNow
-    tool-id: # optional
-    # Devops Integration User Name
-    devops-integration-user-name: # optional
-    # Devops Integration User Password
-    devops-integration-user-password: # optional
-    # Github Context
-    context-github: 
-    # Change Request Number to be Updated
-    change-request-number: 
-    # The customized inputs to create change with the requested details.
-    change-request-details: 
-          
 
 name: Test
 
@@ -55,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Servicenow Update Change Details
-        uses: ServiceNow/servicenow-devops-update-change@v3.1.0
+        uses: ServiceNow/servicenow-devops-update-change@v5.1.0
         id: update
         with:
           change-request-number: 'CHG0030004'
